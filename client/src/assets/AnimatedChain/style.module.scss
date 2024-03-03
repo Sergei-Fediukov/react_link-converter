@@ -1,0 +1,40 @@
+@import 'src/styles/index.scss';
+
+.animatedChainOne {
+    animation: 1.5s ease-in-out infinite reverse running test;
+}
+
+.animatedChainOne2 {
+    animation: 1.5s ease-in-out infinite reverse running test2;
+}
+
+.animatedChainOne3 {
+    animation: 1.5s ease-in-out infinite reverse running test3;
+}
+
+
+@keyframes test {
+    10% {
+        transform: translate(2px, -2px);
+    }
+
+    100% {
+        transform: translate(-2px, 2px);
+    }
+}
+
+@keyframes test2 {
+    to {
+        transform: translate(-6.25%, 6%) rotate(-9deg);
+    }
+}
+
+@keyframes test3 {
+    10% {
+        transform: translate(-2px, 2px);
+    }
+
+    100% {
+        transform: translate(2px, -2px);
+    }
+}

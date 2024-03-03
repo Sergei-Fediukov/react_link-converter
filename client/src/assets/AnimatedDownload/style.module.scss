@@ -1,0 +1,22 @@
+@import 'src/styles/index.scss';
+
+.animatedChainOne {
+    animation: 1s ease-in-out infinite alternate running test;
+}
+
+.animatedChainOne2 {
+    animation: 1s ease-in-out infinite alternate running test2;
+}
+
+@keyframes test {
+    to {
+        transform: matrix(1.45, 0, -0.3, 1, 0, 0)
+
+    }
+}
+
+@keyframes test2 {
+    to {
+        transform: matrix(1.5, 0, 0, 1, -24, -10);
+    }
+}

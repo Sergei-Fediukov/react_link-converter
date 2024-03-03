@@ -1,0 +1,136 @@
+@import 'src/styles/index.scss';
+
+.form {
+  &__custom_input {
+
+    &__wrapper {
+      padding: 20px 0;
+      position: relative;
+      display: flex;
+      justify-content: center;
+    }
+
+    &__inner {
+      position: relative;
+      height: 72px;
+      font-size: 24px;
+      padding: 20px;
+      width: 70%;
+      border: 3px solid var(--main-color);
+      border-right: 0px;
+      border-radius: 15px 0 0 15px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+      left: -36px;
+
+      @media (max-width: $small-weight) {
+        font-size: 20px !important;
+      }
+    }
+  }
+
+  &__custom_button {
+    border: 3px solid var(--main-color);
+    font-size: 24px;
+    cursor: pointer;
+    border-radius: 0 15px 15px 0;
+    width: 72px;
+    height: 72px;
+    transition:
+      transform 0.5s,
+      width 0.5s, left 0.5s,
+      bottom 0.5s,
+      border-radius 0.5s;
+    position: absolute;
+    left: calc(85% - 36px);
+    bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+      width: 120px;
+
+      @media (max-width: $medium-weight) {
+        width: 72px;
+      }
+    }
+
+    &__animation {
+      bottom: -60%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(350%) rotateY(720deg);
+      border: none;
+      border-radius: 50%;
+      pointer-events: none;
+      box-shadow: none;
+    }
+
+    &::before,
+    &::after {
+      box-sizing: inherit;
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.pseudoBordersRotation {
+
+  &::before,
+  span:before,
+  span:after,
+  &::after {
+    width: 100%;
+    height: 100%;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 50%;
+  }
+
+  &::before {
+    border: 2px solid $main-yellow;
+    animation: pseudoBordersRotation 2s linear .1s infinite;
+  }
+
+  &::after {
+    border: 2px solid var(--main-color);
+    animation: pseudoBordersRotation 2s linear .25s infinite;
+  }
+
+  span:before {
+    border: 2px solid var(--main-color);
+    animation: pseudoBordersRotation 2s linear .125s infinite;
+  }
+
+  span:after {
+    border: 2px solid $main-yellow;
+    animation:
+      pseudoBordersRotation 2s linear .5s infinite,
+  }
+}
+
+@keyframes pseudoBordersRotation {
+  0% {
+    transform: rotate(0deg) translate(0, 0);
+  }
+
+  33% {
+    transform: rotate(360deg) translate(5px, 5px);
+  }
+
+  66% {
+    transform: rotate(720deg) translate(- 5px, - 5px);
+  }
+
+  100% {
+    transform: rotate(1080deg) translate(0, 0);
+  }
+}

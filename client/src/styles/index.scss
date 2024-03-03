@@ -1,0 +1,65 @@
+@import 'src/styles/global.scss';
+@import 'src/styles/variables.scss';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  font-weight: 500;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-family: $font-family-roboto;
+  font-weight: 300;
+  overflow: hidden;
+
+  @media (max-width: $medium-weight) {
+    overflow-y: scroll;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: $main-black;
+}
+
+table {
+  display: grid;
+}
+
+thead,
+tbody,
+tr {
+  display: contents;
+}
+
+th,
+td {
+  text-align: left;
+}
+
+#root {
+  height: 100%;
+}
+
+main {
+  text-align: center;
+}
+
+textarea:focus,
+input:focus {
+  outline: none;
+}

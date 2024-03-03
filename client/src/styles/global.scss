@@ -1,0 +1,72 @@
+@import 'src/styles/variables.scss';
+
+.common {
+  &__active {
+    opacity: 1;
+    transition: opacity 1.5s;
+  }
+
+  &__hidden {
+    transition: opacity 0.25s;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  &__disabled {
+    cursor: not-allowed !important;
+    background: $light-gray !important;
+    min-width: 270px;
+    background-position: left top;
+    color: white !important;
+    transition: all 0.5s !important;
+
+    & a {
+      pointer-events: none;
+      color: $dark-gray !important;
+    }
+
+    &:hover {
+      & a {
+        color: $main-white !important;
+      }
+    }
+  }
+
+  &__disableEvents {
+    pointer-events: none;
+  }
+
+  &__error {
+    border-color: red !important;
+    box-shadow: 0 4px 8px rgba(255, 0, 0, 0.5) !important;
+  }
+
+}
+
+.animationGradualAppearance {
+  animation-name: GradualAppearance;
+  animation-duration: 1s;
+  animation-direction: normal;
+  animation-fill-mode: backwards;
+}
+
+.animationDelay {
+  &_025 {
+    animation-delay: 0.25s;
+  }
+
+  &_05 {
+    animation-delay: 0.5s;
+  }
+}
+
+
+@keyframes GradualAppearance {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

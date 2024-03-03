@@ -1,0 +1,32 @@
+@import 'src/styles/index';
+
+.page {
+  &_layout__wrapper {
+    // margin: 10vh 10vw;
+    // height: calc(80vh);
+    // width: calc(80vw);
+    display: grid;
+    grid-template-rows: 170px auto 200px;
+    height: 100vh;
+
+    @media (max-width: $medium-weight) {
+      width: 100%;
+      // padding: 0 10px;
+      // height: 90vh;
+    }
+    
+    @media (max-width: $small-weight) {
+      margin: 0;
+      grid-template-rows: 110px auto 135px;
+      height: 100vh;
+    }
+  }
+
+  &_outlet_wrapper {
+    padding: 5% 15% 0;
+
+    @media (max-width: $large-weight) {
+      padding: 40px 0 0 0 !important;
+    }
+  }
+}

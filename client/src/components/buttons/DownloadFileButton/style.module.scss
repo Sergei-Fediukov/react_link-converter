@@ -1,0 +1,35 @@
+@import 'src/styles/index.scss';
+
+.downloadButton {
+    border-radius: 15px;
+    border: 3px solid var(--main-color);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    background-color: var(--main-color);
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    color: $main-white;
+    height: 100px;
+    width: 350px;
+    margin: 20px 20px 0 20px;
+    
+    @media (max-width: $medium-weight) {
+        min-width: 270px;
+      }
+    &__container {
+        position: relative;
+    }
+
+    &__wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+
+        @media (max-width: $large-weight) {
+            flex-direction: column;
+            justify-content: center;
+        }
+    }
+}

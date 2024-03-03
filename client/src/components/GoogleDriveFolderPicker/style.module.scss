@@ -1,0 +1,90 @@
+@import 'src/styles/index.scss';
+
+.folders {
+  &__fileName {
+    width: 100%;
+    padding: 10px 20px;
+    line-height: 24px;
+    font-size: 20px;
+    margin: 20px 0;
+    border-radius: 15px;
+  }
+  &__wrapper {
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 15px;
+    background-color: $light-gray;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 370px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    background-color: $light-gray;
+
+    @media (max-width: $small-weight) {
+   overflow-x: scroll;
+    }
+  }
+
+  &__item {
+    width: 300px;
+    text-align: left;
+    line-height: 32px;
+    border-radius: 5px;
+    margin: 5px 0;
+    padding-left: 15px;
+    cursor: pointer;
+
+    @media (max-width: $medium-weight) {
+      width: 200px;
+    }
+
+
+    &_inner {
+      border: 1px solid black;
+      padding: 5px 10px;
+      position: relative;
+      border-radius: 5px;
+      background-color: $main-white;
+    }
+
+    &_pre {
+      position: absolute;
+      left: 0;
+    }
+
+    &__button {
+
+      &_upload,
+      &_cancel {
+        border-radius: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        font-size: 24px;
+        font-weight: bold;
+        cursor: pointer;
+        height: 70px;
+        width: 200px;
+        margin: 20px;
+      }
+
+      &_upload {
+        border: 3px solid $main-yellow;
+        background-color: $main-yellow;
+      }
+
+      &_cancel {
+        border: 3px solid $light-gray;
+        background-color: $light-gray;
+      }
+    }
+  }
+}
+
+.selected {
+  background-color: $main-yellow;
+}

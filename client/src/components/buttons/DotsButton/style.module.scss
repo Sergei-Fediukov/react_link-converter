@@ -1,0 +1,43 @@
+@import 'src/styles/index.scss';
+
+.dots {
+  &__wrapper {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    content: '';
+  }
+  
+  &__list {
+    border: 1px solid $main-yellow;
+    background-color: $main-white;
+    width: 210px;
+    padding: 20px 10px;
+    border-radius: 15px;
+    list-style: none;
+    position: absolute;
+    right: 22px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+    &__item {
+      line-height: 42px;
+      border-radius: 15px;
+      display: flex;
+
+      & span {
+        padding-left: 10px;
+      }
+
+      &:hover {
+        background-color: var(--main-color);
+      }
+
+      &_icon {
+        width: 25px;
+      }
+    }
+  }
+}

@@ -1,0 +1,115 @@
+@import 'src/styles/index';
+
+.footer {
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-items: end;
+    padding:0 40px 40px 40px;
+
+    @media (max-width: $small-weight) {
+      padding: 0 0 40px 0;
+    }
+
+    @media (max-width: $large-weight) {
+      justify-content: center;
+    }
+  }
+
+  &__navigation {
+    &_wrapper {
+      height: 100%;
+      display: flex;
+      align-items: end;
+      position: relative;
+      margin-left: 20px;
+
+      @media (max-width: $medium-weight) {
+        display: none;
+      }
+    }
+
+    &_child_wrapper {
+      position: absolute;
+      top: -60px;
+      display: flex;
+      flex-direction: row;
+      transition: opacity cubic-bezier(0.55, 0.055, 0.675, 0.19) ease-in-out;
+    }
+
+    &_parent_box,
+    &_child_box {
+      padding: 10px;
+      margin: 15px;
+      min-height: 75px;
+      min-width: 85px;
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      cursor: pointer;
+      color: #787878;
+      font-weight: bold;
+      font-size: 18px;
+      border-radius: 30%;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: border-radius 0.5s;
+
+      &:hover {
+        border-radius: 50%;
+      }
+    }
+
+    &_parent_box {
+      background-color: #fcfcfc;
+    }
+
+    &_active_box {
+      border-radius: 50%;
+      background-color: var(--main-color);
+      transition: background-color 1s;
+    }
+  }
+}
+
+.activeButton {
+  border-radius: 50%;
+}
+
+.activeChildButton {
+  color: $main-white
+}
+
+.activeChildButton:after,
+.activeButton:after {
+  content: '';
+  border-radius: 30%;
+  position: absolute;
+  z-index: -1 !important;
+  animation: ring 1.5s infinite;
+}
+
+
+.activeButton:after {
+  border-radius: 50%;
+  border: 15px solid #ffde5a;
+}
+
+.activeChildButton:after {
+  border-radius: 50%;
+  border: 15px solid var(--main-color);
+}
+
+@keyframes ring {
+  0% {
+    width: 30px;
+    height: 30px;
+    opacity: 1;
+  }
+
+  100% {
+    width: 100px;
+    height: 100px;
+    opacity: 0;
+  }
+}

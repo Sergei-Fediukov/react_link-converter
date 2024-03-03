@@ -1,0 +1,67 @@
+@import 'src/styles/index.scss';
+
+.form {
+  &__title {
+    font-size: 40px;
+    font-weight: 100;
+
+    @media (max-width: $medium-weight) {
+      font-size: 32px !important;
+    }
+
+    @media (max-width: $small-weight) {
+      font-size: 24px !important;
+    }
+  }
+
+
+
+  .preview {
+    &__wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &__inner {
+      border-radius: 15px;
+      width: 350px;
+      height: 285px;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center center;
+      border: 3px solid $main-yellow;
+      margin: 20px 20px 0 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+    }
+
+    &__download_button {
+      border-radius: 15px;
+      border: 3px solid var(--main-color);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--main-color);
+      font-size: 24px;
+      font-weight: bold;
+      cursor: pointer;
+      color: $main-white;
+      height: 100px;
+      width: 350px;
+      margin: 20px 20px 0 20px;
+      transition: width 0.75s, height 0.75s, background-color 0.75s;
+
+      &__animation {
+        height: 285px;
+        background-color: $main-white !important;
+        // background-size: cover;
+        background-repeat: no-repeat;
+        pointer-events: none;
+        background-position: center center;
+      }
+    }
+  }
+}

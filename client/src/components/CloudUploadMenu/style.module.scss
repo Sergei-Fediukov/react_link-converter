@@ -1,0 +1,21 @@
+@import 'src/styles/index.scss';
+
+.cloud_upload {
+    &__item {
+      line-height: 42px;
+      border-radius: 15px;
+      display: flex;
+
+      & span {
+        padding-left: 10px;
+      }
+
+      &:hover {
+        background-color: var(--main-color);
+      }
+
+      &_icon {
+        width: 25px;
+      }
+    }
+}

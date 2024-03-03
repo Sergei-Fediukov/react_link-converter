@@ -1,0 +1,28 @@
+@import 'src/styles/index.scss';
+
+.logo {
+  position: absolute;
+  cursor: pointer;
+  transition: all 0.5s;
+
+  &__wrapper {
+    position: relative;
+  }
+
+  &__disabled {
+    cursor: not-allowed !important;
+
+    & g {
+      transition: fill 0.5s;
+      fill: $dark-gray !important;
+    }
+  }
+
+  @media (max-width: $medium-weight) {
+    width: 380px !important;
+  }
+
+  @media (max-width: $extra-small-weight) {
+    width: 300px !important;
+  }
+}

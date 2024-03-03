@@ -1,0 +1,53 @@
+@import 'src/styles/index.scss';
+
+.animatedChainOne {
+    animation: 2s ease-in-out infinite alternate running test;
+}
+
+.animatedChainOne2 {
+    animation: 2s ease-in-out infinite reverse running test2, 1s ease-in-out infinite alternate running test4;
+}
+
+.animatedChainOne3 {
+    animation: 2s ease-in-out infinite reverse running test3, 1s ease-in-out infinite alternate running test4
+}
+
+
+
+@keyframes test {
+    to {
+        transform: rotate(5deg) translate(8px, -1px);
+    }
+}
+
+@keyframes test2 {
+    from {
+        opacity: 1;
+        transform: translate(-10%, 0%) scale(110%)
+    }
+
+    to {
+        transform: translate(10%, 20%) rotate(10deg) scale(70%);
+        opacity: 0;
+    }
+}
+
+@keyframes test3 {
+    from {
+        transform: translate(-10%, 0%) scale(120%)
+    }
+
+    to {
+        transform: translate(0%, 20%) rotate(30deg) scale(70%);
+    }
+}
+
+@keyframes test4 {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}

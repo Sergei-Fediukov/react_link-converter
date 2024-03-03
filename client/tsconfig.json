@@ -1,0 +1,23 @@
+{
+    "compilerOptions": {
+        "outDir": "./dist/",
+        "noImplicitAny": true,
+        "module": "ESNext",
+        "target": "ES5",
+        // to not use import React from "react"
+        "jsx": "react-jsx",
+        "allowJs": true,
+        "moduleResolution": "Node",
+        // allow to work with packages that use commonJs like with usual packages using import (reauire() module.export) = commonJs
+        "allowSyntheticDefaultImports": true,
+        // avoid import * as "" from "". Use import "" from "" instead
+        "esModuleInterop": true,
+        // make alias work
+        "baseUrl": ".",
+    },
+    "ts-node": {
+        "compilerOptions": {
+            "module": "CommonJS"
+        }
+    }
+}
