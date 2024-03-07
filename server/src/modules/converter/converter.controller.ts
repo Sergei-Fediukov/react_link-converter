@@ -3,26 +3,23 @@ import { ApiTags } from '@nestjs/swagger'
 
 import { ConverterService } from 'src/modules/converter'
 
+import { IResponse } from './converter.service'
 import { ConvertPagePayload, UrlHealthCheckPayload } from './dto/request'
 
 @ApiTags('Converter')
 @Controller('/converter')
 export class ConverterController {
-  constructor(private readonly converterService: ConverterService) { }
+  constructor(private readonly converterService: ConverterService) {}
 
   @Post('/health-check')
   @HttpCode(201)
   async healthCheck(@Body() { url, convertType }: UrlHealthCheckPayload): Promise<boolean> {
-    return this.converterService.initialURLHealhCheck(url, convertType)
+    return await this.converterService.initialURLHealhCheck(url, convertType)
   }
 
   @Post()
   @HttpCode(201)
-  async convertPage(@Body() convertOptions: ConvertPagePayload): Promise<{
-    file: string;
-    resourceName: string;
-    image: string;
-  }> {
-    return this.converterService.convert(convertOptions)
+  async convertPage(@Body() convertOptions: ConvertPagePayload): Promise<IResponse> {
+    return await this.converterService.convert(convertOptions)
   }
 }

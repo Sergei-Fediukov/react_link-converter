@@ -1,6 +1,8 @@
 import axios, { AxiosRequestConfig } from 'axios'
 
-const axiosClient = axios.create()
+const axiosClient = axios.create({
+  timeout: 60000
+})
 
 export const get = async (url: string, config?: AxiosRequestConfig) => {
   const { data } = await axiosClient.get(url, config)
@@ -12,9 +14,17 @@ export const post = async (url: string, payload: any, config?: AxiosRequestConfi
   return data
 }
 
+let baseUrl
+if (MODE === 'development') {
+  baseUrl = '/api'
+}
+if (MODE === 'production') {
+  baseUrl = API_BASE_URL
+}
+
 export const PATHS = {
-  urlConverter: '/api/converter',
-  urlHealthCheck: '/api/converter/health-check'
+  urlConverter: `${baseUrl}/converter`,
+  urlHealthCheck: `${baseUrl}/converter/health-check`
 }
 
 export const projectKeys = {
